@@ -1,0 +1,1 @@
+import{bn as n,p as s,a as r,bo as d,x as o}from"./index-d5951ac2.js";function f(a,{throttle:c}={}){const e=o(!0);let t;const u=()=>e.value=!0;return c?n(a,u,{throttle:c}):s(a,u),[r(()=>(e.value&&(t=a(),e.value=!1),t)),u]}function m(a,c){const e=o(!0);let t;const u=()=>e.value=!0;return s(a,u),[d(async()=>(e.value&&(t=await a(),e.value=!1),t),c),u]}export{m as a,f as c};
