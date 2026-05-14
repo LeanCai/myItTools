@@ -30,6 +30,8 @@ jobs:
         run: pnpm install
 
       - name: Build
+        env:
+          BASE_URL: /${{ github.event.repository.name }}/
         run: pnpm run build
 
       - name: Deploy to gh-pages
