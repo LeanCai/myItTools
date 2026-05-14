@@ -26,11 +26,17 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
+      - name: Clean pnpm cache
+        run: pnpm store prune
+
       - name: Install dependencies
-        run: pnpm install --shamefully-hoist
+        run: pnpm install --prefer-offline=false
 
       - name: Check TypeScript version
         run: npx tsc --version
 
-      - name: Build
-        run: pnpm run build 2>&1 | head -100
+      - name: Check vue-tsc version
+        run: npx vue-tsc --version
+
+      - name: Build with verbose output
+        run: pnpm run build 2>&1
